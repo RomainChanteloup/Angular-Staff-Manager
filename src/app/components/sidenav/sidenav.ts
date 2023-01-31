@@ -11,10 +11,8 @@ import { Component } from '@angular/core';
 export class SideNav {
   testValue: string = '';
   sideNavOpen: boolean = false;
-  msgOnButtonClick: string;
 
   MenuIconClickedHandler(value: Event) {
-    console.log('reçu', value);
     this.sideNavOpen = !this.sideNavOpen;
   }
 }

@@ -1,13 +1,18 @@
 <mat-drawer-container autosize>
   <mat-drawer #drawer [opened]="sideNavOpen" class="sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
+    <button mat-flat-button>
+      <mat-icon>person</mat-icon>
+      Collaborateurs
+    </button>
   </mat-drawer>
 
   <div class="sidenav-content">
     <toolbar-basic-example
       (MenuIconClicked)="MenuIconClickedHandler($event)"
     ></toolbar-basic-example>
-    <button>testbutton</button>
+    <div id="content-container">
+      <p>Content To Put Here</p>
+    </div>
   </div>
 </mat-drawer-container>
 

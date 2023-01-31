@@ -12,7 +12,6 @@ export class ToolbarBasicExample {
   @Output() MenuIconClicked = new EventEmitter();
 
   clickMenuIcon() {
-    console.log('test');
     this.MenuIconClicked.emit('User click on Menu Icon');
   }
 }
