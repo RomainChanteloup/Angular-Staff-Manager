@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CollaborateurComponent } from './components/sidenav/collaborateur/collaborateur.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [SideNav, ToolbarBasicExample, CollaborateurComponent],
@@ -20,6 +21,7 @@ import { CollaborateurComponent } from './components/sidenav/collaborateur/colla
     MatNativeDateModule,
     MaterialExampleModule,
     ReactiveFormsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [SideNav],
