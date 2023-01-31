@@ -21,6 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [SideNav, ToolbarBasicExample],
+  bootstrap: [SideNav],
 })
 export class AppModule {}
