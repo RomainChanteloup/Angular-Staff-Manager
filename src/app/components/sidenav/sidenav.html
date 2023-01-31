@@ -1,0 +1,16 @@
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <toolbar-basic-example
+      (MenuIconClicked)="MenuIconClickedHandler($event)"
+      (click)="drawer.toggle()"
+    ></toolbar-basic-example>
+  </div>
+</mat-drawer-container>
+
+<!-- Copyright 2023 Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license -->
