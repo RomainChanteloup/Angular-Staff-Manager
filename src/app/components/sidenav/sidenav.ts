@@ -9,8 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['sidenav.css'],
 })
 export class SideNav {
-  MenuIconClickedHandler(value: string) {
-    console.log(value);
+  testValue: string = '';
+  sideNavOpen: boolean = false;
+  msgOnButtonClick: string;
+
+  MenuIconClickedHandler(value: Event) {
+    console.log('reçu', value);
+    this.sideNavOpen = !this.sideNavOpen;
   }
 }
 

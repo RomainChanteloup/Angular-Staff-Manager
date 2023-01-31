@@ -9,12 +9,11 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['toolbar-basic-example.css'],
 })
 export class ToolbarBasicExample {
-  @Output()
-  MenuIconClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() MenuIconClicked = new EventEmitter();
 
   clickMenuIcon() {
     console.log('test');
-    this.MenuIconClicked.emit('User Clicked on Menu Icon');
+    this.MenuIconClicked.emit('User click on Menu Icon');
   }
 }
 
