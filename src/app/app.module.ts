@@ -22,6 +22,7 @@ import { NgChartsModule } from 'ng2-charts';
     MaterialExampleModule,
     ReactiveFormsModule,
     NgChartsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [SideNav],

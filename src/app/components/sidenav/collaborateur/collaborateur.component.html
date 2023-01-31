@@ -1,8 +1,32 @@
-<p>collaborateur works!</p>
-<canvas baseChart
-        [labels]="doughnutChartLabels"
-        [datasets]="doughnutChartDatasets"
-        [options]="doughnutChartOptions"
-        [legend]="true"
-        [type]="'doughnut'">
-</canvas>
+<div *ngIf="chartLoaded" class="chart-container">
+  <canvas
+    baseChart
+    [labels]="doughnutChartLabels"
+    [datasets]="doughnutChartDatasets"
+    [options]="doughnutChartOptions"
+    [legend]="true"
+    [type]="'doughnut'"
+  >
+  </canvas>
+</div>
+
+<table
+  *ngIf="chartLoaded"
+  mat-table
+  [dataSource]="getAllNomPrenom()"
+  class="mat-elevation-z8"
+>
+  <ng-container matColumnDef="Nom">
+    <th mat-header-cell *matHeaderCellDef>Nom</th>
+    <td mat-cell *matCellDef="let element">{{ element.Nom }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Prenom">
+    <th mat-header-cell *matHeaderCellDef>Prenom</th>
+    <td mat-cell *matCellDef="let element">{{ element.Prenom }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['Nom', 'Prenom']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['Nom', 'Prenom']"></tr>
+</table>
+<p></p>
