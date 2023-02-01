@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
-import { ColaboratteurService } from 'src/app/services/colaboratteur.service';
+import { DirectusService } from 'src/app/services/directus.service';
 
 @Component({
   selector: 'app-collaborateur',
@@ -8,11 +8,10 @@ import { ColaboratteurService } from 'src/app/services/colaboratteur.service';
   styleUrls: ['./collaborateur.component.scss'],
 })
 export class CollaborateurComponent implements OnInit {
-  constructor(private colaboratteurService: ColaboratteurService) {}
+  constructor(private directusService: DirectusService) {}
 
   ngOnInit(): void {
-    this.colaboratteurService.getData().subscribe((data: any) => {
-      console.log(data);
+    this.directusService.getCollaborateurs().subscribe((data: any) => {
       this.collaborateurs = data.data;
       this.loadChartData();
     });
