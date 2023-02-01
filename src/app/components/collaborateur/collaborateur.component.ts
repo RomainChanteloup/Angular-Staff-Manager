@@ -37,6 +37,12 @@ export class CollaborateurComponent implements OnInit {
 
   doughnutChartOptions: ChartConfiguration<'doughnut'>['options'] = {
     responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Nombre de collaborateurs actifs en fonction de leur métier',
+      },
+    },
   };
 
   loadChartData() {
