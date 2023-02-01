@@ -28,10 +28,18 @@ export class ProjetsComponent implements OnInit {
     scales: {
       x: {
         stacked: true,
+        title: {
+          display: true,
+          text: 'PI',
+        },
       },
       y: {
         stacked: true,
         min: 0,
+        title: {
+          display: true,
+          text: 'ETP',
+        },
       },
     },
     plugins: {
