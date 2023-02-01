@@ -10,9 +10,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CollaborateurComponent } from './components/collaborateur/collaborateur.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ProjetsComponent } from './components/projets/projets.component';
 
 @NgModule({
-  declarations: [SideNav, ToolbarBasicExample, CollaborateurComponent],
+  declarations: [SideNav, ToolbarBasicExample, CollaborateurComponent, ProjetsComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,

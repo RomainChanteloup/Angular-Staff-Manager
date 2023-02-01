@@ -21,6 +21,7 @@ export class CollaborateurComponent implements OnInit {
   collaborateurs: any;
   chart: any;
   title = 'ng2-charts-demo';
+  columnsNames = ['Nom', 'Prenom', 'Metier'];
 
   // Doughnut
   doughnutChartLabels: string[];
@@ -72,15 +73,6 @@ export class CollaborateurComponent implements OnInit {
       }
       res.push(count);
     }
-    return res;
-  }
-
-  getAllNomPrenom() {
-    let res = [];
-    for (let colab of this.collaborateurs) {
-      res.push({ Nom: colab.Nom, Prenom: colab.Prenom });
-    }
-    console.log(res);
     return res;
   }
 }
