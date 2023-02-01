@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
 import { DirectusService } from 'src/app/services/directus.service';
 
 @Component({
@@ -37,7 +36,7 @@ export class ProjetsComponent implements OnInit {
     },
     plugins: {
       legend: {
-        display: false,
+        display: true,
       },
       title: {
         display: true,
@@ -70,6 +69,8 @@ export class ProjetsComponent implements OnInit {
     let distinctPIGlobal: any[] = [
       ...new Set(this.iterationsList.map((item: { Label: any }) => item.Label)),
     ];
+    // We re order the list because not all time in oder in the db
+    distinctPIGlobal = this.reorderListOfPI(distinctPIGlobal);
 
     let sumETP: any = [];
     for (let record of this.planStaff) {
@@ -166,5 +167,16 @@ export class ProjetsComponent implements OnInit {
       }
     } //case where start is the same as the end
     return res;
+  }
+
+  reorderListOfPI(list: string[]): string[] {
+    return list.sort((a, b) => {
+      const [aChapter, aSection] = a.split('.').map(Number);
+      const [bChapter, bSection] = b.split('.').map(Number);
+      if (aChapter !== bChapter) {
+        return aChapter - bChapter;
+      }
+      return aSection - bSection;
+    });
   }
 }
