@@ -20,7 +20,6 @@ export class CollaborateurComponent implements OnInit {
   chartLoaded = false;
   collaborateurs: any;
   chart: any;
-  title = 'ng2-charts-demo';
   columnsNames = ['Nom', 'Prenom', 'Metier'];
 
   // Doughnut
